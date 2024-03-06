@@ -2,15 +2,16 @@ import static java.lang.String.valueOf;
 
 class FizzBuzz {
     public static String convertToFizzBuzz(int number) {
-        if (number % 15 == 0) {
-            return "FizzBuzz";
-        }
+        String converted = "";
         if (number % 3 == 0) {
-            return "Fizz";
+            converted += "Fizz";
         }
         if (number % 5 == 0) {
-            return "Buzz";
+            converted += "Buzz";
         }
-        return valueOf(number);
+        if (converted.isBlank()) {
+            converted = valueOf(number);
+        }
+        return converted;
     }
 }
