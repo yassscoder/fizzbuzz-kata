@@ -30,4 +30,11 @@ public class FizzBuzzShould {
         assertEquals("Fizz", FizzBuzz.convertToFizzBuzz(number));
     }
 
+    @ParameterizedTest
+    @ValueSource(ints = {5, 10})
+    @DisplayName("return buzz")
+    public void return_buzz(int number) {
+        assertEquals("Buzz", FizzBuzz.convertToFizzBuzz(number));
+    }
+
 }
