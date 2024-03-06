@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -20,6 +21,13 @@ public class FizzBuzzShould {
     @DisplayName("return the given number")
     public void return_the_given_number(int number, String convertedNumber) {
         assertEquals(convertedNumber, FizzBuzz.convertToFizzBuzz(number));
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {3, 6, 9, 12})
+    @DisplayName("return fizz")
+    public void return_fizz(int number) {
+        assertEquals("Fizz", FizzBuzz.convertToFizzBuzz(number));
     }
 
 }
